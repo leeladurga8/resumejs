@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume dynamically</title>
+   <style>
+    table ,th,td{
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 5px 5px 20px;  
+    }
+    table{
+        width:100%;
+    }
+   </style> 
+</head>
+<body>
+    
+    <script>
+    
+    var con = document.createElement('div');
+    con.className = "container";
+    con.style.width = "100%";
+    con.style.height = "100vh";
+    con.style.backgroundColor = "gray";
+
+    var rem = document.createElement('div');
+     rem.className = "card";
+     rem.style.width = "700px";
+     rem.style.height = "100vh";
+     rem.style.backgroundColor = "white";
+     rem.style.padding = "50px";
+     con.style.display ="flex";
+     con.style.justifyContent = "center";
+
+     var nam = document.createElement('div');
+     nam.className = "name";
+
+     var h4 = document.createElement('span');
+     h4.innerHTML = "NAME:LEELA";
+     h4.style.fontSize = "20px";
+     h4.style.fontWeight = "bold";
+
+
+     var mail = document.createElement('span');
+     mail.innerHTML = "<br><b>Email:</b>leeladurga8@gmail.com";
+     nam.appendChild(h4);
+     nam.appendChild(mail);
+    // nam.style.display = "flex"
+     rem.appendChild(nam);
+     
+     var head = document.createElement('div');
+     var h3 = document.createElement('h3');
+     h3.innerHTML = "Objective:" ;
+     h3.style.backgroundColor = "#f8dd8f" ;
+     head.appendChild(h3);
+     var career = document.createElement('p');
+     career.innerHTML = "Aspiring Full Stack Developer with a solid foundation in HTML, CSS, JavaScript, and Node.js, eager to apply my coding skills and grow within a dynamic development team";
+     head.appendChild(career);
+     rem.appendChild(head);
+
+     
+     var ac = document.createElement('div');
+     var h3 = document.createElement('h3');
+     h3.innerHTML ="Academics:";
+         
+     h3.style.backgroundColor = "#f8dd8f";
+     h3.style.marginTop ="14px;"
+     ac.appendChild(h3);
+     rem.appendChild(ac);
+     var tab = document.createElement('div');
+     
+ const data = [{"Qualification":"P.G(M.C.A)","Institution":"Sri.y.n.college" , "Duration":"2007-2010","percentage":"75%"}, {"Qualification":"Degree(B.sc-M.P.E)","Institution":"Sri.y.n.college" , "Duration":"2004-2007","percentage":"70%"},{"Qualification":"Intermediate","Institution":"Gowtami.jr.college" , "Duration":"2002-2004","percentage":"67%"},{"Qualification":"S.S.C","Institution":"Vasista high school" , "Duration":"2001-2002" ,"percentage":"65%"}]
+
+var table = "<table><thead><tr><th>Qualification</th><th>Institution</th><th>Duration</th><th>percentage</th></tr></thead><tbody>";
+ for( var i = 0 ; i <data.length; i++){
+     table += "<tr><td>"+ 
+        data[i].Qualification + "</td><td>"+
+        data[i].Institution + "</td><td>"+
+        data[i].Duration + "</td><td>"+ data[i].percentage + "</td></tr>";
+ }
+  
+  table += "</tbody></table>";
+  tab.innerHTML = table ;
+
+  rem.appendChild(tab);
+
+  var skills = document.createElement('div');
+    var h2 = document.createElement('h3');
+    h2.innerHTML = "Skills";
+    h2.style.backgroundColor = "#f8dd8f";
+    skills.appendChild(h2);
+    var L1 = document.createElement('li');
+    L1.innerHTML = "C,C++ Python(Programming languages)";
+    L1.style.paddingBottom="8px";  
+     skills.appendChild(L1);
+    var L2 = document.createElement('li');
+   L2.innerHTML = "HTML,CSS,Bootstrap";
+   L2.style.paddingBottom="8px";
+   skills.appendChild(L2);
+   var L3 =document.createElement('li');
+   L3.innerHTML = "MYSQL,MONGODB";
+   L3.style.paddingBottom="8px";
+   skills.appendChild(L3);   
+   var L4 = document.createElement('li');
+   L4.innerHTML = "Git Hub";
+   L4.style.paddingBottom="8px";
+   skills.appendChild(L4);    
+    rem.appendChild(skills);   
+
+    var declare = document.createElement('div');
+     var h3= document.createElement('h3');
+     h3.innerHTML="Declaration:";
+     h3.style.marginTop="2px";
+     h3.style.backgroundColor = "#f8dd8f";
+     declare.appendChild(h3);
+     var tru = document.createElement('p');
+          tru.innerHTML="I hereby declare that all the details furnished above are true to the best of my knowledge and belief.";
+         tru.style.marginTop="2px";
+          declare.appendChild(tru);
+          rem.appendChild(declare);
+      var place = document.createElement('div');
+       var plac = document.createElement('span');
+      plac.innerHTML="Place:Hyderabad";
+       place.appendChild(plac);
+       var sign = document.createElement('span');
+        sign.innerHTML="B.Leela";  
+        place.appendChild(sign);
+        place.style.display="flex";
+        place.style.justifyContent="space-between";
+        rem.appendChild(place);
+
+
+
+
+        con.appendChild(rem);
+     document.body.appendChild(con);
+     console.log(con);
+
+   
+    </script>
+
+</body>
+</html>
